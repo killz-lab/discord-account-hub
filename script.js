@@ -443,45 +443,46 @@ function closeDiscordLoginModal() {
 }
 
 function initiateDiscordOAuth() {
-    // Discord OAuth2 configuration
-    const clientId = 'YOUR_DISCORD_CLIENT_ID'; // Replace with actual client ID
-    const redirectUri = encodeURIComponent(window.location.origin + '/discord-callback');
-    const scope = encodeURIComponent('identify guilds email');
-    
-    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=${scope}`;
+    // Demo mode - simulate login without real Discord credentials
+    // Remove the YOUR_DISCORD_CLIENT_ID requirement for demo purposes
     
     // Show loading state
-    showNotification('Redirecting to Discord...', 'info');
+    const modal = document.getElementById('discordLoginModal');
+    const loginBtn = modal.querySelector('.btn-primary');
     
-    // In a real implementation, this would redirect to Discord OAuth
-    // For demo, we'll simulate a successful login
+    if (loginBtn) {
+        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
+        loginBtn.disabled = true;
+    }
+    
+    // Simulate OAuth process
     setTimeout(() => {
-        closeDiscordLoginModal();
         simulateDiscordLogin();
     }, 1500);
-    
-    // Uncomment this line for real OAuth flow:
-    // window.location.href = authUrl;
 }
 
 function simulateDiscordLogin() {
     // Simulate successful Discord login
-    const userData = {
+    const mockUser = {
+        id: '1234567890123456789',
         username: 'DemoUser',
         discriminator: '1234',
-        avatar: 'https://cdn.discordapp.com/embed/avatars/123456789/abcdef123456.png',
-        id: '123456789012345678',
+        avatar: 'https://cdn.discordapp.com/embed/avatars/0.png',
         email: 'demo@example.com'
     };
     
-    // Store user data
-    localStorage.setItem('discordUser', JSON.stringify(userData));
+    // Store user session
+    localStorage.setItem('discordUser', JSON.stringify(mockUser));
     localStorage.setItem('isLoggedIn', 'true');
     
     // Update UI
-    updateLoginUI(userData);
+    updateLoginButton(mockUser);
+    closeDiscordLoginModal();
     
-    showNotification('Successfully logged in as ' + userData.username + '#' + userData.discriminator + '!', 'success');
+    showNotification('Successfully logged in as DemoUser#1234! (Demo Mode)', 'success');
+    
+    // Uncomment this line for real OAuth flow:
+    // window.location.href = authUrl;
 }
 
 function updateLoginUI(userData) {
@@ -574,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (isLoggedIn) {
         const userData = JSON.parse(localStorage.getItem('discordUser'));
-        updateLoginUI(userData);
+        updateLoginButton(userData);
     }
 });
 
