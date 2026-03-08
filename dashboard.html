@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Discord Account Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-discord"></i>
+                <span>Discord Account Hub</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+                <a href="templates.html" class="nav-link">Templates</a>
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="login-btn">
+                    <i class="fab fa-discord"></i>
+                    Login
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <h4>John Doe</h4>
+                        <span>Premium Member</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-item active" data-section="overview">
+                        <i class="fas fa-chart-pie"></i>
+                        Overview
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="saved-templates">
+                        <i class="fas fa-bookmark"></i>
+                        Saved Templates
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="tool-history">
+                        <i class="fas fa-history"></i>
+                        Tool History
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="servers">
+                        <i class="fas fa-server"></i>
+                        My Servers
+                    </a></li>
+                    <li><a href="#" class="nav-item" data-section="settings">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="upgrade-card">
+                    <h4>Upgrade to Pro</h4>
+                    <p>Unlock all features and remove limitations</p>
+                    <button class="btn btn-primary btn-small">Upgrade Now</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="section-header">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's what's been happening with your Discord servers.</p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>5</h3>
+                            <p>Active Servers</p>
+                            <span class="stat-change positive">+2 this week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>2,847</h3>
+                            <p>Total Members</p>
+                            <span class="stat-change positive">+156 this week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>23</h3>
+                            <p>Tools Used</p>
+                            <span class="stat-change positive">+8 this week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>12</h3>
+                            <p>Saved Templates</p>
+                            <span class="stat-change neutral">No change</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                            <button class="btn btn-secondary btn-small">View All</button>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Downloaded "Gaming Community Hub" template</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Added 25 new members to "Tech Community"</p>
+                                    <span class="activity-time">5 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Updated moderation settings for "Gaming Hub"</p>
+                                    <span class="activity-time">1 day ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <i class="fas fa-magic"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>Generated 15 usernames using the username tool</p>
+                                    <span class="activity-time">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" onclick="openQuickAction('template')">
+                                <i class="fas fa-layer-group"></i>
+                                <span>Create Template</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="openQuickAction('tool')">
+                                <i class="fas fa-tools"></i>
+                                <span>Use Tool</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="openQuickAction('server')">
+                                <i class="fas fa-plus"></i>
+                                <span>Add Server</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="openQuickAction('invite')">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Invite Members</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Server Performance -->
+                <div class="dashboard-card full-width">
+                    <div class="card-header">
+                        <h3>Server Performance</h3>
+                        <select class="time-filter">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                        </select>
+                    </div>
+                    <div class="performance-chart">
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Server growth and engagement chart</p>
+                            <small>Chart visualization would be implemented here</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saved Templates Section -->
+            <section id="saved-templates" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Saved Templates</h1>
+                    <p>Your collection of saved Discord server templates.</p>
+                </div>
+
+                <div class="templates-grid">
+                    <div class="saved-template-card">
+                        <div class="template-header">
+                            <div class="template-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="template-actions">
+                                <button class="action-btn"><i class="fas fa-download"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h3>Gaming Community Hub</h3>
+                        <p>Complete gaming server setup with LFG channels and ranking system.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-hashtag"></i> 15 channels</span>
+                            <span><i class="fas fa-shield-alt"></i> 6 roles</span>
+                        </div>
+                    </div>
+
+                    <div class="saved-template-card">
+                        <div class="template-header">
+                            <div class="template-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="template-actions">
+                                <button class="action-btn"><i class="fas fa-download"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h3>General Community Server</h3>
+                        <p>All-purpose community server with welcoming channels and discussion areas.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-hashtag"></i> 12 channels</span>
+                            <span><i class="fas fa-shield-alt"></i> 5 roles</span>
+                        </div>
+                    </div>
+
+                    <div class="saved-template-card">
+                        <div class="template-header">
+                            <div class="template-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="template-actions">
+                                <button class="action-btn"><i class="fas fa-download"></i></button>
+                                <button class="action-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <h3>Digital Marketplace</h3>
+                        <p>Marketplace setup with product showcase and seller verification.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-hashtag"></i> 18 channels</span>
+                            <span><i class="fas fa-shield-alt"></i> 7 roles</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tool History Section -->
+            <section id="tool-history" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Tool History</h1>
+                    <p>Your recent tool usage and generated content.</p>
+                </div>
+
+                <div class="history-list">
+                    <div class="history-item">
+                        <div class="history-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="history-content">
+                            <h4>Username Generator</h4>
+                            <p>Generated: CoolGamer123, EpicPlayer456, ProGamer789</p>
+                            <span class="history-time">2 hours ago</span>
+                        </div>
+                        <button class="btn btn-secondary btn-small">Regenerate</button>
+                    </div>
+
+                    <div class="history-item">
+                        <div class="history-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="history-content">
+                            <h4>Role Name Generator</h4>
+                            <p>Generated: Admin, Moderator, VIP, Elite, Premium</p>
+                            <span class="history-time">1 day ago</span>
+                        </div>
+                        <button class="btn btn-secondary btn-small">Regenerate</button>
+                    </div>
+
+                    <div class="history-item">
+                        <div class="history-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="history-content">
+                            <h4>ID Lookup</h4>
+                            <p>Looked up user ID: 123456789012345678</p>
+                            <span class="history-time">3 days ago</span>
+                        </div>
+                        <button class="btn btn-secondary btn-small">Lookup Again</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Servers Section -->
+            <section id="servers" class="dashboard-section">
+                <div class="section-header">
+                    <h1>My Servers</h1>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Add Server
+                    </button>
+                </div>
+
+                <div class="servers-grid">
+                    <div class="server-card">
+                        <div class="server-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="server-info">
+                            <h3>Gaming Hub</h3>
+                            <p>1,234 members • 15 online</p>
+                            <div class="server-status online">
+                                <span></span>
+                                Online
+                            </div>
+                        </div>
+                        <div class="server-actions">
+                            <button class="action-btn"><i class="fas fa-cog"></i></button>
+                            <button class="action-btn"><i class="fas fa-chart-line"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="server-card">
+                        <div class="server-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="server-info">
+                            <h3>Tech Community</h3>
+                            <p>856 members • 23 online</p>
+                            <div class="server-status online">
+                                <span></span>
+                                Online
+                            </div>
+                        </div>
+                        <div class="server-actions">
+                            <button class="action-btn"><i class="fas fa-cog"></i></button>
+                            <button class="action-btn"><i class="fas fa-chart-line"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="server-card">
+                        <div class="server-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="server-info">
+                            <h3>Music Lounge</h3>
+                            <p>432 members • 8 online</p>
+                            <div class="server-status online">
+                                <span></span>
+                                Online
+                            </div>
+                        </div>
+                        <div class="server-actions">
+                            <button class="action-btn"><i class="fas fa-cog"></i></button>
+                            <button class="action-btn"><i class="fas fa-chart-line"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Settings</h1>
+                    <p>Manage your account and preferences.</p>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>Account Settings</h3>
+                        <div class="setting-item">
+                            <label>Username</label>
+                            <input type="text" value="JohnDoe" class="setting-input">
+                        </div>
+                        <div class="setting-item">
+                            <label>Email</label>
+                            <input type="email" value="john@example.com" class="setting-input">
+                        </div>
+                        <div class="setting-item">
+                            <label>Notification Preferences</label>
+                            <select class="setting-select">
+                                <option>All notifications</option>
+                                <option>Important only</option>
+                                <option>None</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary">Save Changes</button>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Server Preferences</h3>
+                        <div class="setting-item">
+                            <label>Default Template Category</label>
+                            <select class="setting-select">
+                                <option>Gaming</option>
+                                <option>Community</option>
+                                <option>Marketplace</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>Auto-save Tool History</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label>Show Tool Tips</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <button class="btn btn-primary">Save Preferences</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord Account Hub</span>
+                    </div>
+                    <p>Your complete resource for Discord server management and growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Discord Account Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Dashboard Navigation
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.dashboard-section');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all items and sections
+                navItems.forEach(nav => nav.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked item
+                item.classList.add('active');
+                
+                // Show corresponding section
+                const sectionId = item.dataset.section;
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+
+        // Quick Actions
+        function openQuickAction(action) {
+            switch(action) {
+                case 'template':
+                    showNotification('Opening template creator...', 'info');
+                    break;
+                case 'tool':
+                    showNotification('Redirecting to tools...', 'info');
+                    setTimeout(() => window.location.href = 'tools.html', 1000);
+                    break;
+                case 'server':
+                    showNotification('Opening server setup...', 'info');
+                    break;
+                case 'invite':
+                    showNotification('Opening invite generator...', 'info');
+                    break;
+            }
+        }
+
+        // Settings Toggle Switches
+        document.querySelectorAll('.setting-item input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const label = this.parentElement.querySelector('label').textContent;
+                showNotification(`${label} ${this.checked ? 'enabled' : 'disabled'}`, 'success');
+            });
+        });
+
+        // Save Settings
+        document.querySelectorAll('.settings-card .btn-primary').forEach(button => {
+            button.addEventListener('click', function() {
+                showNotification('Settings saved successfully!', 'success');
+            });
+        });
+
+        // Server Actions
+        document.querySelectorAll('.server-actions .action-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i').className;
+                if (icon.includes('cog')) {
+                    showNotification('Opening server settings...', 'info');
+                } else if (icon.includes('chart')) {
+                    showNotification('Opening server analytics...', 'info');
+                }
+            });
+        });
+
+        // Template Actions
+        document.querySelectorAll('.template-actions .action-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const icon = this.querySelector('i').className;
+                if (icon.includes('download')) {
+                    showNotification('Downloading template...', 'success');
+                } else if (icon.includes('edit')) {
+                    showNotification('Opening template editor...', 'info');
+                } else if (icon.includes('trash')) {
+                    if (confirm('Are you sure you want to delete this template?')) {
+                        this.closest('.saved-template-card').remove();
+                        showNotification('Template deleted', 'success');
+                    }
+                }
+            });
+        });
+
+        // History Actions
+        document.querySelectorAll('.history-item .btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.textContent;
+                showNotification(`${action}...`, 'info');
+            });
+        });
+    </script>
+
+    <style>
+        /* Dashboard Layout */
+        .dashboard-container {
+            display: flex;
+            min-height: calc(100vh - 60px);
+            margin-top: 60px;
+        }
+
+        /* Sidebar */
+        .dashboard-sidebar {
+            width: 280px;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 25px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-avatar i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .user-info h4 {
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .user-info span {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 5px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 25px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .nav-item i {
+            width: 20px;
+        }
+
+        .sidebar-footer {
+            margin-top: auto;
+            padding: 20px;
+        }
+
+        .upgrade-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .upgrade-card h4 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .upgrade-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        /* Main Content */
+        .dashboard-main {
+            flex: 1;
+            background-color: var(--bg-primary);
+            overflow-y: auto;
+        }
+
+        .dashboard-section {
+            display: none;
+            padding: 30px;
+        }
+
+        .dashboard-section.active {
+            display: block;
+        }
+
+        .section-header {
+            margin-bottom: 30px;
+        }
+
+        .section-header h1 {
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .stat-content h3 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-content p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .stat-change {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .stat-change.positive {
+            color: var(--secondary-color);
+        }
+
+        .stat-change.negative {
+            color: var(--danger-color);
+        }
+
+        .stat-change.neutral {
+            color: var(--text-muted);
+        }
+
+        /* Dashboard Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-header h3 {
+            color: var(--text-primary);
+        }
+
+        .time-filter {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        /* Activity List */
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background-color: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .activity-icon i {
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-content p {
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .activity-time {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .quick-action-btn {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+        }
+
+        .quick-action-btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .quick-action-btn i {
+            font-size: 1.5rem;
+        }
+
+        /* Full Width Card */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .performance-chart {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-tertiary);
+            border-radius: 8px;
+        }
+
+        .chart-placeholder {
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .chart-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        /* Templates Grid */
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .saved-template-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .saved-template-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .template-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .template-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .template-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .template-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background-color: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        .saved-template-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .saved-template-card p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .template-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* History List */
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .history-item {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .history-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .history-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .history-content {
+            flex: 1;
+        }
+
+        .history-content h4 {
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .history-content p {
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .history-time {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Servers Grid */
+        .servers-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .server-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .server-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .server-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .server-info {
+            flex: 1;
+        }
+
+        .server-info h3 {
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .server-info p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .server-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .server-status.online {
+            color: var(--secondary-color);
+        }
+
+        .server-status span {
+            width: 8px;
+            height: 8px;
+            background-color: currentColor;
+            border-radius: 50%;
+        }
+
+        /* Settings */
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        .settings-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .settings-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .setting-item {
+            margin-bottom: 20px;
+        }
+
+        .setting-item label {
+            display: block;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .setting-input,
+        .setting-select {
+            width: 100%;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        /* Toggle Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--bg-tertiary);
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .dashboard-sidebar {
+                width: 240px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .dashboard-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .sidebar-nav ul {
+                display: flex;
+                padding: 10px;
+                overflow-x: auto;
+            }
+
+            .sidebar-nav li {
+                margin: 0;
+                white-space: nowrap;
+            }
+
+            .nav-item {
+                padding: 10px 15px;
+            }
+
+            .dashboard-main {
+                padding: 20px;
+            }
+
+            .dashboard-section {
+                padding: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .server-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .history-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</body>
+</html>

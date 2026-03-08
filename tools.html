@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - Discord Account Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-discord"></i>
+                <span>Discord Account Hub</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="tools.html" class="nav-link active">Tools</a>
+                <a href="templates.html" class="nav-link">Templates</a>
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search tools...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="login-btn">
+                    <i class="fab fa-discord"></i>
+                    Login
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Discord Tools</h1>
+            <p class="page-subtitle">Powerful utilities to enhance your Discord experience</p>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <!-- ID Lookup Tool -->
+            <div class="tool-container">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h2>ID Lookup Tool</h2>
+                        <p>Find user and server information instantly using Discord IDs</p>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="input-group">
+                        <input type="text" id="idInput" placeholder="Enter Discord User or Server ID...">
+                        <button onclick="lookupID()" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                            Lookup
+                        </button>
+                    </div>
+                    <div id="idResult" class="tool-result"></div>
+                </div>
+            </div>
+
+            <!-- Username Generator -->
+            <div class="tool-container">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h2>Username Ideas Generator</h2>
+                        <p>Generate unique and creative Discord usernames</p>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="input-group">
+                        <input type="text" id="usernameKeyword" placeholder="Enter keyword (optional)...">
+                        <button onclick="generateUsernames()" class="btn btn-primary">
+                            <i class="fas fa-magic"></i>
+                            Generate
+                        </button>
+                    </div>
+                    <div id="usernameResults" class="results-grid"></div>
+                </div>
+            </div>
+
+            <!-- Server Role Generator -->
+            <div class="tool-container">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h2>Server Role Name Generator</h2>
+                        <p>Create perfect role names and permission sets for your server</p>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="input-group">
+                        <select id="roleType" class="select-input">
+                            <option value="moderation">Moderation Roles</option>
+                            <option value="vip">VIP/Premium Roles</option>
+                            <option value="gaming">Gaming Roles</option>
+                            <option value="community">Community Roles</option>
+                            <option value="custom">Custom Roles</option>
+                        </select>
+                        <button onclick="generateRoles()" class="btn btn-primary">
+                            <i class="fas fa-magic"></i>
+                            Generate Roles
+                        </button>
+                    </div>
+                    <div id="roleResults" class="results-grid"></div>
+                </div>
+            </div>
+
+            <!-- Server Template Generator -->
+            <div class="tool-container">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h2>Server Template Generator</h2>
+                        <p>Create custom server templates with channels and roles</p>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="template-form">
+                        <div class="form-group">
+                            <label>Server Name</label>
+                            <input type="text" id="serverName" placeholder="My Awesome Server">
+                        </div>
+                        <div class="form-group">
+                            <label>Server Type</label>
+                            <select id="serverType" class="select-input">
+                                <option value="gaming">Gaming</option>
+                                <option value="community">Community</option>
+                                <option value="marketplace">Marketplace</option>
+                                <option value="study">Study Group</option>
+                                <option value="creative">Creative/Art</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Member Size</label>
+                            <select id="memberSize" class="select-input">
+                                <option value="small">Small (1-50)</option>
+                                <option value="medium">Medium (51-500)</option>
+                                <option value="large">Large (500+)</option>
+                            </select>
+                        </div>
+                        <button onclick="generateTemplate()" class="btn btn-primary btn-large">
+                            <i class="fas fa-cog"></i>
+                            Generate Template
+                        </button>
+                    </div>
+                    <div id="templateResult" class="tool-result"></div>
+                </div>
+            </div>
+
+            <!-- Emoji Converter -->
+            <div class="tool-container">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h2>Emoji Converter</h2>
+                        <p>Convert text to emojis and create custom emoji combinations</p>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="input-group">
+                        <input type="text" id="emojiText" placeholder="Enter text to convert to emojis...">
+                        <button onclick="convertToEmojis()" class="btn btn-primary">
+                            <i class="fas fa-smile"></i>
+                            Convert
+                        </button>
+                    </div>
+                    <div id="emojiResult" class="tool-result"></div>
+                </div>
+            </div>
+
+            <!-- Permission Calculator -->
+            <div class="tool-container">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="tool-info">
+                        <h2>Permission Calculator</h2>
+                        <p>Calculate Discord permission numbers and understand role permissions</p>
+                    </div>
+                </div>
+                <div class="tool-content">
+                    <div class="permissions-grid">
+                        <div class="permission-category">
+                            <h3>General Permissions</h3>
+                            <label><input type="checkbox" data-permission="8"> Administrator</label>
+                            <label><input type="checkbox" data-permission="32"> Manage Server</label>
+                            <label><input type="checkbox" data-permission="268435456"> View Audit Log</label>
+                        </div>
+                        <div class="permission-category">
+                            <h3>Membership Permissions</h3>
+                            <label><input type="checkbox" data-permission="1"> Create Invite</label>
+                            <label><input type="checkbox" data-permission="2"> Kick Members</label>
+                            <label><input type="checkbox" data-permission="4"> Ban Members</label>
+                        </div>
+                        <div class="permission-category">
+                            <h3>Text Permissions</h3>
+                            <label><input type="checkbox" data-permission="2048"> Send Messages</label>
+                            <label><input type="checkbox" data-permission="4096"> Send TTS Messages</label>
+                            <label><input type="checkbox" data-permission="8192"> Manage Messages</label>
+                        </div>
+                    </div>
+                    <div class="permission-result">
+                        <div class="permission-display">
+                            <span>Permission Number:</span>
+                            <code id="permissionNumber">0</code>
+                            <button onclick="copyPermissionNumber()" class="btn btn-secondary">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord Account Hub</span>
+                    </div>
+                    <p>Your complete resource for Discord server management and growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Discord Account Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tool Functions
+        function lookupID() {
+            const id = document.getElementById('idInput').value.trim();
+            const resultDiv = document.getElementById('idResult');
+            
+            if (!id) {
+                showNotification('Please enter a Discord ID', 'warning');
+                return;
+            }
+            
+            // Validate ID format
+            if (!/^\d+$/.test(id)) {
+                resultDiv.innerHTML = `
+                    <div class="result-card error">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Invalid ID Format</h3>
+                        <p>Discord IDs must be numbers only. Example: 1346744809473445949</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Your Input:</span>
+                                <span class="info-value">${id}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Valid Format:</span>
+                                <span class="info-value">Numbers only (17-19 digits)</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Check ID length
+            if (id.length < 17 || id.length > 19) {
+                resultDiv.innerHTML = `
+                    <div class="result-card error">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Invalid ID Length</h3>
+                        <p>Discord IDs are typically 17-19 digits long.</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Your ID Length:</span>
+                                <span class="info-value">${id.length} digits</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Expected Length:</span>
+                                <span class="info-value">17-19 digits</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Discord ID timestamp calculation
+            const discordEpoch = 1420070400000;
+            const snowflake = BigInt(id);
+            const timestamp = Number((snowflake >> BigInt(22)) + BigInt(discordEpoch));
+            const creationDate = new Date(timestamp);
+            
+            // Determine if it's likely a user or server ID
+            const isLikelyUser = timestamp > Date.now() - 365 * 24 * 60 * 60 * 1000; // Created within last year
+            
+            resultDiv.innerHTML = `
+                <div class="result-card">
+                    <h3><i class="fas fa-${isLikelyUser ? 'user' : 'server'}"></i> ${isLikelyUser ? 'User' : 'Server'} Information</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Discord ID:</span>
+                            <span class="info-value">${id}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Type:</span>
+                            <span class="info-value">${isLikelyUser ? 'Likely User ID' : 'Likely Server ID'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Creation Date:</span>
+                            <span class="info-value">${creationDate.toLocaleDateString()} ${creationDate.toLocaleTimeString()}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Created:</span>
+                            <span class="info-value">${getRelativeTime(creationDate)}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Timestamp:</span>
+                            <span class="info-value">${timestamp}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">ID Length:</span>
+                            <span class="info-value">${id.length} digits</span>
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn btn-secondary" onclick="copyToClipboard('${id}', this)">
+                            <i class="fas fa-copy"></i> Copy ID
+                        </button>
+                        <button class="btn btn-secondary" onclick="copyTimestamp('${timestamp}', this)">
+                            <i class="fas fa-clock"></i> Copy Timestamp
+                        </button>
+                    </div>
+                    <div class="info-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Note:</strong> This shows real Discord ID information extracted from the snowflake ID. To get username/server name, you need Discord API access.</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function getRelativeTime(date) {
+            const now = new Date();
+            const diffTime = Math.abs(now - date);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const diffMonths = Math.floor(diffDays / 30);
+            const diffYears = Math.floor(diffDays / 365);
+            
+            if (diffYears > 0) {
+                return `${diffYears} year${diffYears > 1 ? 's' : ''} ago`;
+            } else if (diffMonths > 0) {
+                return `${diffMonths} month${diffMonths > 1 ? 's' : ''} ago`;
+            } else if (diffDays > 0) {
+                return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+            } else {
+                return 'Today';
+            }
+        }
+        
+        function copyTimestamp(timestamp, button) {
+            navigator.clipboard.writeText(timestamp).then(() => {
+                showNotification('Timestamp copied!', 'success');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        function generateUsernames() {
+            const keyword = document.getElementById('usernameKeyword').value;
+            const resultsDiv = document.getElementById('usernameResults');
+            const usernames = [];
+            
+            for (let i = 0; i < 8; i++) {
+                usernames.push(generateUsername());
+            }
+            
+            if (keyword) {
+                usernames.unshift(keyword + Math.floor(Math.random() * 999));
+                usernames.unshift(keyword + '_' + Math.floor(Math.random() * 999));
+            }
+            
+            resultsDiv.innerHTML = usernames.map(username => `
+                <div class="result-item">
+                    <span>${username}</span>
+                    <button class="copy-btn" onclick="copyToClipboard('${username}', this)">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function generateRoles() {
+            const roleType = document.getElementById('roleType').value;
+            const resultsDiv = document.getElementById('roleResults');
+            const roles = [];
+            
+            const roleSets = {
+                moderation: ['Admin', 'Moderator', 'Helper', 'Trial Mod', 'Senior Mod'],
+                vip: ['VIP', 'Premium', 'Elite', 'Supporter', 'Diamond'],
+                gaming: ['Gamer', 'Pro Player', 'Elite Gamer', 'Champion', 'Master'],
+                community: ['Member', 'Active', 'Contributor', 'Veteran', 'Legend'],
+                custom: ['Custom', 'Special', 'Unique', 'Rare', 'Exclusive']
+            };
+            
+            roles.push(...roleSets[roleType]);
+            
+            resultsDiv.innerHTML = roles.map(role => `
+                <div class="result-item">
+                    <span>${role}</span>
+                    <button class="copy-btn" onclick="copyToClipboard('${role}', this)">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function generateTemplate() {
+            const serverName = document.getElementById('serverName').value || 'My Server';
+            const serverType = document.getElementById('serverType').value;
+            const memberSize = document.getElementById('memberSize').value;
+            const resultDiv = document.getElementById('templateResult');
+            
+            const templates = {
+                gaming: {
+                    roles: ['Owner', 'Admin', 'Mod', 'VIP', 'Member', 'New Member'],
+                    channels: ['#welcome', '#rules', '#announcements', '#general', '#gaming', '#lfg', '#media', '#memes']
+                },
+                community: {
+                    roles: ['Owner', 'Admin', 'Mod', 'Helper', 'Active Member', 'Member', 'New'],
+                    channels: ['#welcome', '#introductions', '#rules', '#announcements', '#general', '#feedback', '#events']
+                },
+                marketplace: {
+                    roles: ['Owner', 'Admin', 'Staff', 'Verified Seller', 'Buyer', 'Member'],
+                    channels: ['#welcome', '#rules', '#announcements', '#marketplace', '#showcase', '#reviews', '#support']
+                },
+                study: {
+                    roles: ['Owner', 'Admin', 'Tutor', 'Student', 'Member'],
+                    channels: ['#welcome', '#rules', '#announcements', '#general', '#study-help', '#resources', '#projects']
+                },
+                creative: {
+                    roles: ['Owner', 'Admin', 'Artist', 'Designer', 'Member', 'New'],
+                    channels: ['#welcome', '#rules', '#announcements', '#showcase', '#feedback', '#resources', '#collaboration']
+                }
+            };
+            
+            const template = templates[serverType];
+            
+            resultDiv.innerHTML = `
+                <div class="result-card">
+                    <h3><i class="fas fa-server"></i> ${serverName} Template</h3>
+                    <div class="template-section">
+                        <h4>Roles</h4>
+                        <div class="role-list">
+                            ${template.roles.map(role => `<span class="role-tag">${role}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="template-section">
+                        <h4>Channels</h4>
+                        <div class="channel-list">
+                            ${template.channels.map(channel => `<span class="channel-tag">${channel}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <button class="btn btn-primary" onclick="copyTemplate('${serverName}', ${JSON.stringify(template).replace(/"/g, '&quot;')}, this)">
+                            <i class="fas fa-download"></i> Copy Template
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function copyTemplate(serverName, template, button) {
+            const templateText = `Server: ${serverName}\n\nRoles:\n${template.roles.join('\n')}\n\nChannels:\n${template.channels.join('\n')}`;
+            copyToClipboard(templateText, button);
+        }
+
+        function convertToEmojis() {
+            const text = document.getElementById('emojiText').value;
+            const resultDiv = document.getElementById('emojiResult');
+            
+            if (!text) {
+                showNotification('Please enter text to convert', 'warning');
+                return;
+            }
+            
+            const emojiMap = {
+                'a': '🅰️', 'b': '🅱️', 'c': '🇨', 'd': '🇩', 'e': '🇪', 'f': '🇫',
+                'g': '🇬', 'h': '🇭', 'i': '🇮', 'j': '🇯', 'k': '🇰', 'l': '🇱',
+                'm': '🇲', 'n': '🇳', 'o': '⭕', 'p': '🇵', 'q': '🇶', 'r': '🇷',
+                's': '🇸', 't': '🇹', 'u': '🇺', 'v': '🇻', 'w': '🇼', 'x': '❌',
+                'y': '🇾', 'z': '🇿', '!': '❗', '?': '❓', '#': '#️⃣', '*': '*️⃣'
+            };
+            
+            let emojiText = '';
+            for (let char of text.toLowerCase()) {
+                emojiText += emojiMap[char] || char;
+            }
+            
+            resultDiv.innerHTML = `
+                <div class="result-card">
+                    <h3><i class="fas fa-smile"></i> Emoji Result</h3>
+                    <div class="emoji-output">${emojiText}</div>
+                    <div class="result-actions">
+                        <button class="btn btn-secondary" onclick="copyToClipboard('${emojiText}', this)">
+                            <i class="fas fa-copy"></i> Copy Emojis
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Permission Calculator
+        document.querySelectorAll('input[data-permission]').forEach(checkbox => {
+            checkbox.addEventListener('change', calculatePermissions);
+        });
+
+        function calculatePermissions() {
+            let total = 0;
+            document.querySelectorAll('input[data-permission]:checked').forEach(checkbox => {
+                total += parseInt(checkbox.dataset.permission);
+            });
+            document.getElementById('permissionNumber').textContent = total;
+        }
+
+        function copyPermissionNumber() {
+            const number = document.getElementById('permissionNumber').textContent;
+            copyToClipboard(number, event.target);
+        }
+    </script>
+
+    <style>
+        .page-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .tools-section {
+            padding: 60px 0;
+        }
+
+        .tool-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tool-container:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tool-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tool-icon i {
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .tool-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+
+        .tool-info p {
+            color: var(--text-secondary);
+        }
+
+        .tool-content {
+            padding: 25px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .input-group input,
+        .select-input {
+            flex: 1;
+            min-width: 200px;
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .input-group input:focus,
+        .select-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .tool-result {
+            margin-top: 20px;
+        }
+
+        .result-card {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .result-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: var(--bg-secondary);
+            border-radius: 6px;
+        }
+
+        .info-label {
+            color: var(--text-secondary);
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .result-item {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Tool Result Styles */
+        .result-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .result-card.error {
+            border-color: #dc3545;
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+
+        .result-card.error h3 {
+            color: #dc3545;
+        }
+
+        .result-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: var(--bg-tertiary);
+            border-radius: 6px;
+        }
+
+        .info-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .info-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 15px;
+            background-color: rgba(88, 101, 242, 0.1);
+            border: 1px solid rgba(88, 101, 242, 0.3);
+            border-radius: 8px;
+        }
+
+        .info-note i {
+            color: var(--primary-color);
+            margin-top: 2px;
+        }
+
+        .info-note p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .template-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .template-section {
+            margin-bottom: 20px;
+        }
+
+        .template-section h4 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .role-list,
+        .channel-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .role-tag,
+        .channel-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .emoji-output {
+            font-size: 2rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background-color: var(--bg-tertiary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .permissions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .permission-category h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .permission-category label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            margin-bottom: 8px;
+        }
+
+        .permission-category input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-color);
+        }
+
+        .permission-result {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .permission-display {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .permission-display span {
+            color: var(--text-secondary);
+        }
+
+        .permission-display code {
+            background-color: var(--bg-secondary);
+            color: var(--primary-color);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .tool-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .permissions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .permission-display {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</body>
+</html>

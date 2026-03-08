@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templates - Discord Account Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-discord"></i>
+                <span>Discord Account Hub</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+                <a href="templates.html" class="nav-link active">Templates</a>
+                <a href="guides.html" class="nav-link">Guides</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search templates...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="login-btn">
+                    <i class="fab fa-discord"></i>
+                    Login
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Discord Server Templates</h1>
+            <p class="page-subtitle">Pre-built server templates to jumpstart your community</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-category="all">All Templates</button>
+                    <button class="filter-tab" data-category="gaming">Gaming</button>
+                    <button class="filter-tab" data-category="community">Community</button>
+                    <button class="filter-tab" data-category="marketplace">Marketplace</button>
+                    <button class="filter-tab" data-category="study">Study</button>
+                    <button class="filter-tab" data-category="creative">Creative</button>
+                </div>
+                <div class="filter-sort">
+                    <select class="sort-select">
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest First</option>
+                        <option value="name">Name A-Z</option>
+                        <option value="downloads">Most Downloaded</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Grid -->
+    <section class="templates-section">
+        <div class="container">
+            <div class="templates-grid">
+                <!-- Gaming Templates -->
+                <div class="template-card" data-category="gaming">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="template-badge gaming">Gaming</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Gaming Community Hub</h3>
+                        <p>Perfect setup for gaming communities with LFG channels, game-specific rooms, and ranking system.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 2.5k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">15+ Channels</span>
+                            <span class="feature-tag">6 Roles</span>
+                            <span class="feature-tag">Moderation Setup</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Gaming Community Hub')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Gaming Community Hub')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="gaming">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="template-badge gaming">Gaming</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Esports Tournament Server</h3>
+                        <p>Professional esports server setup with team management, tournament brackets, and match scheduling.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 1.8k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Team Channels</span>
+                            <span class="feature-tag">Tournament System</span>
+                            <span class="feature-tag">Staff Roles</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Esports Tournament Server')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Esports Tournament Server')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Community Templates -->
+                <div class="template-card" data-category="community">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="template-badge community">Community</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>General Community Server</h3>
+                        <p>All-purpose community server with welcoming channels, discussion areas, and engagement features.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 3.2k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Welcome System</span>
+                            <span class="feature-tag">Discussion Rooms</span>
+                            <span class="feature-tag">Event Channels</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('General Community Server')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('General Community Server')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="community">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="template-badge community">Community</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Support & Help Center</h3>
+                        <p>Customer support server with ticket system, knowledge base channels, and staff management.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 2.1k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Ticket System</span>
+                            <span class="feature-tag">FAQ Channels</span>
+                            <span class="feature-tag">Support Roles</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Support & Help Center')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Support & Help Center')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Marketplace Templates -->
+                <div class="template-card" data-category="marketplace">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="template-badge marketplace">Marketplace</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Digital Marketplace Server</h3>
+                        <p>Complete marketplace setup with product showcase, deal channels, and seller verification.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 1.5k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Product Channels</span>
+                            <span class="feature-tag">Deal Rooms</span>
+                            <span class="feature-tag">Verification System</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Digital Marketplace Server')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Digital Marketplace Server')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="marketplace">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="template-badge marketplace">Marketplace</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Trading & Exchange Hub</h3>
+                        <p>Secure trading server with escrow channels, reputation system, and trade verification.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 1.2k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Trade Channels</span>
+                            <span class="feature-tag">Reputation System</span>
+                            <span class="feature-tag">Middleman Setup</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Trading & Exchange Hub')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Trading & Exchange Hub')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Study Templates -->
+                <div class="template-card" data-category="study">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="template-badge study">Study</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Study Group Server</h3>
+                        <p>Educational server with subject-specific channels, study sessions, and resource sharing.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 1.8k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Subject Channels</span>
+                            <span class="feature-tag">Study Rooms</span>
+                            <span class="feature-tag">Resource Library</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Study Group Server')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Study Group Server')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="study">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="template-badge study">Study</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Language Learning Hub</h3>
+                        <p>Language learning server with practice channels, native speaker rooms, and cultural exchange.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 1.3k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Language Channels</span>
+                            <span class="feature-tag">Practice Rooms</span>
+                            <span class="feature-tag">Cultural Exchange</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Language Learning Hub')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Language Learning Hub')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Creative Templates -->
+                <div class="template-card" data-category="creative">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="template-badge creative">Creative</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Art & Design Community</h3>
+                        <p>Creative server for artists and designers with portfolio channels, critique rooms, and collaboration.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 2.0k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Portfolio Channels</span>
+                            <span class="feature-tag">Critique Rooms</span>
+                            <span class="feature-tag">Collaboration Space</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Art & Design Community')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Art & Design Community')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <div class="template-card" data-category="creative">
+                    <div class="template-header">
+                        <div class="template-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="template-badge creative">Creative</div>
+                    </div>
+                    <div class="template-content">
+                        <h3>Music Production Server</h3>
+                        <p>Music community with collaboration rooms, feedback channels, and production resources.</p>
+                        <div class="template-stats">
+                            <span><i class="fas fa-download"></i> 1.6k downloads</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="template-features">
+                            <span class="feature-tag">Studio Channels</span>
+                            <span class="feature-tag">Feedback Rooms</span>
+                            <span class="feature-tag">Resource Library</span>
+                        </div>
+                    </div>
+                    <div class="template-actions">
+                        <button class="btn btn-primary" onclick="useTemplate('Music Production Server')">
+                            <i class="fas fa-download"></i> Use Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="previewTemplate('Music Production Server')">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Template Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Template Preview</h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Template preview content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="useTemplateFromModal()">
+                    <i class="fas fa-download"></i> Use This Template
+                </button>
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord Account Hub</span>
+                    </div>
+                    <p>Your complete resource for Discord server management and growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Discord Account Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Template filtering
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const templateCards = document.querySelectorAll('.template-card');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.dataset.category;
+
+                // Filter templates
+                templateCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Template data
+        const templateData = {
+            'Gaming Community Hub': {
+                roles: ['Owner', 'Admin', 'Moderator', 'Elite Gamer', 'VIP', 'Member', 'New Member'],
+                channels: ['#welcome', '#rules', '#announcements', '#general', '#lfg', '#gaming-talk', '#memes', '#media', '#voice-chat', '#squad-up'],
+                description: 'Complete gaming community setup with LFG systems and ranking.'
+            },
+            'Esports Tournament Server': {
+                roles: ['Owner', 'Tournament Admin', 'Referee', 'Team Captain', 'Player', 'Spectator'],
+                channels: ['#welcome', '#tournaments', '#team-registration', '#match-schedules', '#results', '#team-chat', '#scrim-finder'],
+                description: 'Professional esports server with tournament management.'
+            },
+            'General Community Server': {
+                roles: ['Owner', 'Admin', 'Moderator', 'Helper', 'Active Member', 'Member', 'New'],
+                channels: ['#welcome', '#introductions', '#rules', '#announcements', '#general', '#feedback', '#events', '#suggestions'],
+                description: 'Perfect for building a welcoming community.'
+            },
+            'Support & Help Center': {
+                roles: ['Owner', 'Support Lead', 'Support Agent', 'Verified User', 'Customer'],
+                channels: ['#welcome', '#tickets', '#faq', '#announcements', '#feedback', '#knowledge-base'],
+                description: 'Customer support server with ticket system.'
+            }
+        };
+
+        let currentTemplate = '';
+
+        function useTemplate(templateName) {
+            showNotification(`Template "${templateName}" is ready to be applied to your server!`, 'success');
+            // In a real app, this would integrate with Discord API
+        }
+
+        function previewTemplate(templateName) {
+            currentTemplate = templateName;
+            const modal = document.getElementById('previewModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = templateName;
+
+            const template = templateData[templateName] || {
+                roles: ['Owner', 'Admin', 'Moderator', 'Member'],
+                channels: ['#welcome', '#rules', '#general', '#announcements'],
+                description: 'Template preview not available.'
+            };
+
+            modalBody.innerHTML = `
+                <div class="template-preview">
+                    <div class="preview-section">
+                        <h3><i class="fas fa-info-circle"></i> Description</h3>
+                        <p>${template.description}</p>
+                    </div>
+                    <div class="preview-section">
+                        <h3><i class="fas fa-shield-alt"></i> Roles</h3>
+                        <div class="role-list">
+                            ${template.roles.map(role => `<span class="role-tag">${role}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <h3><i class="fas fa-hashtag"></i> Channels</h3>
+                        <div class="channel-list">
+                            ${template.channels.map(channel => `<span class="channel-tag">${channel}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function useTemplateFromModal() {
+            if (currentTemplate) {
+                useTemplate(currentTemplate);
+                closeModal();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('previewModal').style.display = 'none';
+            currentTemplate = '';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('previewModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Sort functionality
+        document.querySelector('.sort-select').addEventListener('change', (e) => {
+            const sortBy = e.target.value;
+            const grid = document.querySelector('.templates-grid');
+            const cards = Array.from(grid.children);
+
+            cards.sort((a, b) => {
+                switch(sortBy) {
+                    case 'name':
+                        return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent);
+                    case 'popular':
+                    case 'downloads':
+                        const aDownloads = parseInt(a.querySelector('.template-stats span').textContent.match(/\d+(\.\d+)?k?/)[0]);
+                        const bDownloads = parseInt(b.querySelector('.template-stats span').textContent.match(/\d+(\.\d+)?k?/)[0]);
+                        return bDownloads - aDownloads;
+                    default:
+                        return 0;
+                }
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        });
+    </script>
+
+    <style>
+        .page-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .filter-section {
+            padding: 30px 0;
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--primary-color);
+            color: var(--text-primary);
+        }
+
+        .filter-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .sort-select {
+            background-color: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .templates-section {
+            padding: 60px 0;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .template-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .template-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .template-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .template-icon i {
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .template-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .template-badge.gaming {
+            background-color: #5865F2;
+            color: white;
+        }
+
+        .template-badge.community {
+            background-color: #57F287;
+            color: var(--bg-primary);
+        }
+
+        .template-badge.marketplace {
+            background-color: #FEE75C;
+            color: var(--bg-primary);
+        }
+
+        .template-badge.study {
+            background-color: #EB459E;
+            color: white;
+        }
+
+        .template-badge.creative {
+            background-color: #ED4245;
+            color: white;
+        }
+
+        .template-content {
+            padding: 20px;
+        }
+
+        .template-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .template-content p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .template-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .template-stats span {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .template-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feature-tag {
+            background-color: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .template-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .template-actions .btn {
+            flex: 1;
+            justify-content: center;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-header h2 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .template-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .preview-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .preview-section p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .role-list,
+        .channel-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .role-tag,
+        .channel-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-tabs {
+                justify-content: center;
+            }
+
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .template-actions {
+                flex-direction: column;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

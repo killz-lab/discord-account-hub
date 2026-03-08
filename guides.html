@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides - Discord Account Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fab fa-discord"></i>
+                <span>Discord Account Hub</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="tools.html" class="nav-link">Tools</a>
+                <a href="templates.html" class="nav-link">Templates</a>
+                <a href="guides.html" class="nav-link active">Guides</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search guides...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <button class="login-btn">
+                    <i class="fab fa-discord"></i>
+                    Login
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">Discord Server Guides</h1>
+            <p class="page-subtitle">Learn how to grow, manage, and optimize your Discord server</p>
+        </div>
+    </section>
+
+    <!-- Featured Guides -->
+    <section class="featured-guides">
+        <div class="container">
+            <h2 class="section-title">Featured Guides</h2>
+            <div class="featured-grid">
+                <div class="featured-card" onclick="openGuide('server-growth')">
+                    <div class="featured-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-badge">Popular</div>
+                        <h3>How to Grow Your Discord Server</h3>
+                        <p>Complete guide to attracting and retaining members for sustainable server growth.</p>
+                        <div class="featured-meta">
+                            <span><i class="fas fa-clock"></i> 15 min read</span>
+                            <span><i class="fas fa-eye"></i> 12.5k views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card" onclick="openGuide('moderation-bots')">
+                    <div class="featured-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-badge">Essential</div>
+                        <h3>Setting Up Moderation Bots</h3>
+                        <p>Step-by-step tutorial for configuring essential moderation bots to keep your server safe.</p>
+                        <div class="featured-meta">
+                            <span><i class="fas fa-clock"></i> 12 min read</span>
+                            <span><i class="fas fa-eye"></i> 8.3k views</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card" onclick="openGuide('channel-design')">
+                    <div class="featured-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-badge">Design</div>
+                        <h3>How to Design Good Channels</h3>
+                        <p>Learn the principles of effective channel organization and naming conventions.</p>
+                        <div class="featured-meta">
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                            <span><i class="fas fa-eye"></i> 6.7k views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Categories -->
+    <section class="guide-categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="showCategoryGuides('growth')">
+                    <div class="category-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Growth & Marketing</h3>
+                    <p>Strategies to grow your server and increase engagement</p>
+                    <span class="category-count">8 guides</span>
+                </div>
+
+                <div class="category-card" onclick="showCategoryGuides('management')">
+                    <div class="category-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Server Management</h3>
+                    <p>Administrative tasks and server optimization</p>
+                    <span class="category-count">12 guides</span>
+                </div>
+
+                <div class="category-card" onclick="showCategoryGuides('moderation')">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Moderation & Safety</h3>
+                    <p>Keep your server safe and well-moderated</p>
+                    <span class="category-count">6 guides</span>
+                </div>
+
+                <div class="category-card" onclick="showCategoryGuides('community')">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>Create an engaging and welcoming community</p>
+                    <span class="category-count">9 guides</span>
+                </div>
+
+                <div class="category-card" onclick="showCategoryGuides('bots')">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Bots & Automation</h3>
+                    <p>Setup and configure useful Discord bots</p>
+                    <span class="category-count">7 guides</span>
+                </div>
+
+                <div class="category-card" onclick="showCategoryGuides('monetization')">
+                    <div class="category-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Monetization</h3>
+                    <p>Learn how to monetize your Discord server</p>
+                    <span class="category-count">4 guides</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Guides -->
+    <section class="all-guides">
+        <div class="container">
+            <h2 class="section-title">All Guides</h2>
+            <div class="guides-list">
+                <div class="guide-item" onclick="openGuide('server-growth')">
+                    <div class="guide-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Grow Your Discord Server</h3>
+                        <p>Complete guide to attracting and retaining members for sustainable server growth.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Growth & Marketing</span>
+                            <span><i class="fas fa-clock"></i> 15 min</span>
+                            <span><i class="fas fa-eye"></i> 12.5k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item" onclick="openGuide('moderation-bots')">
+                    <div class="guide-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Setting Up Moderation Bots</h3>
+                        <p>Step-by-step tutorial for configuring essential moderation bots to keep your server safe.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Moderation & Safety</span>
+                            <span><i class="fas fa-clock"></i> 12 min</span>
+                            <span><i class="fas fa-eye"></i> 8.3k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item" onclick="openGuide('channel-design')">
+                    <div class="guide-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>How to Design Good Channels</h3>
+                        <p>Learn the principles of effective channel organization and naming conventions.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Server Management</span>
+                            <span><i class="fas fa-clock"></i> 10 min</span>
+                            <span><i class="fas fa-eye"></i> 6.7k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item" onclick="openGuide('engagement-tips')">
+                    <div class="guide-image">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>10 Tips for Better Community Engagement</h3>
+                        <p>Proven strategies to increase member participation and create a lively community.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Community Building</span>
+                            <span><i class="fas fa-clock"></i> 8 min</span>
+                            <span><i class="fas fa-eye"></i> 5.2k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item" onclick="openGuide('role-permissions')">
+                    <div class="guide-image">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Understanding Role Permissions</h3>
+                        <p>Complete breakdown of Discord's role permission system and best practices.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Server Management</span>
+                            <span><i class="fas fa-clock"></i> 18 min</span>
+                            <span><i class="fas fa-eye"></i> 7.8k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item" onclick="openGuide('welcome-systems')">
+                    <div class="guide-image">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Creating Effective Welcome Systems</h3>
+                        <p>Setup automated welcome messages and new member onboarding flows.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Community Building</span>
+                            <span><i class="fas fa-clock"></i> 11 min</span>
+                            <span><i class="fas fa-eye"></i> 4.5k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item" onclick="openGuide('monetization')">
+                    <div class="guide-image">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Monetizing Your Discord Server</h3>
+                        <p>Explore different methods to generate revenue from your Discord community.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Monetization</span>
+                            <span><i class="fas fa-clock"></i> 14 min</span>
+                            <span><i class="fas fa-eye"></i> 9.1k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-item" onclick="openGuide('custom-bots')">
+                    <div class="guide-image">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>Creating Custom Discord Bots</h3>
+                        <p>Learn the basics of coding your own Discord bots with JavaScript.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">Bots & Automation</span>
+                            <span><i class="fas fa-clock"></i> 25 min</span>
+                            <span><i class="fas fa-eye"></i> 3.8k</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Content Modal -->
+    <div id="guideModal" class="modal">
+        <div class="modal-content guide-modal">
+            <div class="modal-header">
+                <h2 id="guideTitle">Guide Title</h2>
+                <button class="modal-close" onclick="closeGuideModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="guideContent">
+                <!-- Guide content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeGuideModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord Account Hub</span>
+                    </div>
+                    <p>Your complete resource for Discord server management and growth.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Discord Account Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Guide content data
+        const guideContent = {
+            'server-growth': {
+                title: 'How to Grow Your Discord Server',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Define Your Server's Purpose</h3>
+                        <p>Before you can grow your server, you need to clearly define what it's about and who it's for. A focused server is easier to market and more attractive to the right audience.</p>
+                        <ul>
+                            <li>Identify your target audience</li>
+                            <li>Define your unique value proposition</li>
+                            <li>Create clear server rules and guidelines</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Optimize Your Server Setup</h3>
+                        <p>A well-organized server is crucial for retention. New members should be able to easily understand the structure and find relevant channels.</p>
+                        <ul>
+                            <li>Create a clear channel hierarchy</li>
+                            <li>Set up welcome channels and rules</li>
+                            <li>Configure role systems properly</li>
+                            <li>Add essential bots for moderation and engagement</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>3. Promote Your Server</h3>
+                        <p>Once your server is ready, it's time to promote it. Here are effective strategies:</p>
+                        <ul>
+                            <li>Share on social media platforms</li>
+                            <li>List your server on Discord directory websites</li>
+                            <li>Collaborate with other server owners</li>
+                            <li>Create engaging content related to your server's topic</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>4. Engage Your Community</h3>
+                        <p>Keeping members engaged is key to sustainable growth. Here's how:</p>
+                        <ul>
+                            <li>Host regular events and activities</li>
+                            <li>Create discussion prompts and questions</li>
+                            <li>Recognize and reward active members</li>
+                            <li>Listen to community feedback</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'moderation-bots': {
+                title: 'Setting Up Moderation Bots',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Choose the Right Moderation Bot</h3>
+                        <p>Popular moderation bots include Dyno, MEE6, and Carl-bot. Each has different features and strengths.</p>
+                        <ul>
+                            <li><strong>Dyno:</strong> Comprehensive moderation with custom commands</li>
+                            <li><strong>MEE6:</strong> Great for leveling and automated moderation</li>
+                            <li><strong>Carl-bot:</strong> Advanced reaction roles and logging</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Basic Setup Steps</h3>
+                        <ol>
+                            <li>Invite the bot to your server with proper permissions</li>
+                            <li>Configure the bot's dashboard settings</li>
+                            <li>Set up moderation commands and automod</li>
+                            <li>Create custom commands for your server</li>
+                            <li>Test all features before going live</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>3. Essential Moderation Features</h3>
+                        <ul>
+                            <li>Auto-moderation for spam and inappropriate content</li>
+                            <li>Warning and strike systems</li>
+                            <li>Logging of all moderator actions</li>
+                            <li>Custom welcome and goodbye messages</li>
+                            <li>Slow mode and flood protection</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'channel-design': {
+                title: 'How to Design Good Channels',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Channel Categories</h3>
+                        <p>Organize your channels into logical categories to keep things tidy:</p>
+                        <ul>
+                            <li><strong>Information:</strong> Rules, announcements, welcome</li>
+                            <li><strong>General:</strong> Main chat areas</li>
+                            <li><strong>Topics:</strong> Specific subject channels</li>
+                            <li><strong>Voice:</strong> Voice chat categories</li>
+                            <li><strong>Staff:</strong> Private staff channels</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Naming Conventions</h3>
+                        <p>Consistent naming makes your server easier to navigate:</p>
+                        <ul>
+                            <li>Use emojis to categorize channels (💬 for text, 🔊 for voice)</li>
+                            <li>Keep names short and descriptive</li>
+                            <li>Use consistent formatting (e.g., all lowercase or title case)</li>
+                            <li>Group related channels together</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>3. Channel Permissions</h3>
+                        <p>Set up proper permissions to control access:</p>
+                        <ul>
+                            <li>Restrict certain channels to specific roles</li>
+                            <li>Create read-only announcement channels</li>
+                            <li>Set up private staff channels</li>
+                            <li>Use channel overwrites for fine-tuned control</li>
+                        </ul>
+                    </div>
+                `
+            },
+            'social-media-promotion': {
+                title: 'Social Media Promotion Strategies',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Choose the Right Platforms</h3>
+                        <p>Focus on platforms where your target audience spends their time.</p>
+                        <ul>
+                            <li>Twitter/X for quick updates and community interaction</li>
+                            <li>Instagram for visual content and stories</li>
+                            <li>TikTok for short-form video content</li>
+                            <li>Reddit for niche community engagement</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Create Compelling Content</h3>
+                        <p>Showcase the value of joining your Discord server.</p>
+                        <ul>
+                            <li>Share highlights from your server</li>
+                            <li>Create educational content related to your niche</li>
+                            <li>Use memes and trending formats</li>
+                            <li>Post consistently and at optimal times</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'growth'
+            },
+            'collaboration-growth': {
+                title: 'Collaborating for Growth',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Find Collaboration Partners</h3>
+                        <p>Partnering with other server owners can dramatically boost your growth.</p>
+                        <ul>
+                            <li>Look for servers with similar target audiences</li>
+                            <li>Choose partners with complementary content</li>
+                            <li>Reach out with specific collaboration ideas</li>
+                            <li>Build genuine relationships before proposing partnerships</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Types of Collaborations</h3>
+                        <p>Different collaboration strategies work for different goals.</p>
+                        <ul>
+                            <li>Cross-promotion in announcements</li>
+                            <li>Joint events and giveaways</li>
+                            <li>Guest appearances in each other's servers</li>
+                            <li>Shared content creation</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'growth'
+            },
+            'automated-moderation': {
+                title: 'Advanced Automated Moderation',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Setting Up Auto-Moderation</h3>
+                        <p>Configure your bots to automatically handle common issues.</p>
+                        <ul>
+                            <li>Set up keyword filters for inappropriate content</li>
+                            <li>Configure anti-spam measures</li>
+                            <li>Enable raid protection</li>
+                            <li>Set up automatic punishments for violations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Creating Moderation Workflows</h3>
+                        <p>Establish clear procedures for different types of violations.</p>
+                        <ul>
+                            <li>Define warning levels and consequences</li>
+                            <li>Create appeal processes</li>
+                            <li>Set up moderator escalation procedures</li>
+                            <li>Document all moderation policies</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'moderation'
+            },
+            'role-permissions': {
+                title: 'Understanding Role Permissions',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Role Hierarchy Basics</h3>
+                        <p>Discord roles work on a hierarchy system. Higher roles can manage lower roles.</p>
+                        <ul>
+                            <li>Drag roles to reorder them in the hierarchy</li>
+                            <li>Top roles have all permissions of lower roles</li>
+                            <li>Use @everyone as the base role with minimal permissions</li>
+                            <li>Create separate roles for different permission levels</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Essential Role Permissions</h3>
+                        <p>Understanding key permissions helps you secure your server.</p>
+                        <ul>
+                            <li><strong>Administrator:</strong> Grants all permissions (use sparingly)</li>
+                            <li><strong>Manage Server:</strong> Can change server settings</li>
+                            <li><strong>Manage Roles:</strong> Can create and modify roles</li>
+                            <li><strong>Kick/Ban Members:</strong> Can remove members from server</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'management'
+            },
+            'engagement-tips': {
+                title: '10 Tips for Better Community Engagement',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Create Welcome Experiences</h3>
+                        <p>First impressions matter for new members.</p>
+                        <ul>
+                            <li>Set up custom welcome messages</li>
+                            <li>Create introduction channels</li>
+                            <li>Assign new member roles automatically</li>
+                            <li>Provide clear next steps for new members</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Regular Activities</h3>
+                        <p>Keep your community active with consistent events.</p>
+                        <ul>
+                            <li>Host weekly game nights</li>
+                            <li>Run monthly giveaways</li>
+                            <li>Create discussion prompts</li>
+                            <li>Organize community projects</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'community'
+            },
+            'welcome-systems': {
+                title: 'Creating Effective Welcome Systems',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Welcome Channel Setup</h3>
+                        <p>Design a welcoming experience for new members.</p>
+                        <ul>
+                            <li>Create a dedicated welcome channel</li>
+                            <li>Set up welcome messages with a bot</li>
+                            <li>Include rules and important links</li>
+                            <li>Add reaction roles for self-assignment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Onboarding Process</h3>
+                        <p>Guide new members through your server effectively.</p>
+                        <ul>
+                            <li>Create a new member guide</li>
+                            <li>Set up milestone roles</li>
+                            <li>Provide channel descriptions</li>
+                            <li>Offer help and support channels</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'community'
+            },
+            'custom-bots': {
+                title: 'Creating Custom Discord Bots',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Getting Started with Bot Development</h3>
+                        <p>Learn the basics of creating your own Discord bot.</p>
+                        <ul>
+                            <li>Choose a programming language (JavaScript/Node.js recommended)</li>
+                            <li>Create a Discord application in the Developer Portal</li>
+                            <li>Get your bot token and invite link</li>
+                            <li>Set up your development environment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Essential Bot Features</h3>
+                        <p>Start with these fundamental bot capabilities.</p>
+                        <ul>
+                            <li>Message handling and responses</li>
+                            <li>Command processing with prefixes</li>
+                            <li>Role and permission management</li>
+                            <li>Database integration for data storage</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'bots'
+            },
+            'bot-automation': {
+                title: 'Bot Automation Best Practices',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Choosing the Right Bots</h3>
+                        <p>Select bots that match your server's needs.</p>
+                        <ul>
+                            <li>Consider your server size and activity level</li>
+                            <li>Check bot reviews and reliability</li>
+                            <li>Ensure bots have necessary permissions</li>
+                            <li>Test bots before full deployment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Automation Workflows</h3>
+                        <p>Set up efficient automated processes.</p>
+                        <ul>
+                            <li>Configure auto-moderation rules</li>
+                            <li>Set up scheduled announcements</li>
+                            <li>Create automated role assignments</li>
+                            <li>Implement backup and logging systems</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'bots'
+            },
+            'monetization': {
+                title: 'Monetizing Your Discord Server',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Premium Memberships</h3>
+                        <p>Offer exclusive benefits to paying members.</p>
+                        <ul>
+                            <li>Create tiered membership levels</li>
+                            <li>Offer exclusive channels and roles</li>
+                            <li>Provide special perks and features</li>
+                            <li>Set up recurring payment systems</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Other Monetization Methods</h3>
+                        <p>Explore diverse revenue streams.</p>
+                        <ul>
+                            <li>Sell digital products or services</li>
+                            <li>Offer consulting or coaching</li>
+                            <li>Create paid events or workshops</li>
+                            <li>Use affiliate marketing partnerships</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'monetization'
+            },
+            'donation-systems': {
+                title: 'Setting Up Donation Systems',
+                content: `
+                    <div class="guide-section">
+                        <h3>1. Donation Platform Setup</h3>
+                        <p>Choose the right platform for receiving donations.</p>
+                        <ul>
+                            <li>Research popular donation platforms</li>
+                            <li>Compare fees and features</li>
+                            <li>Set up secure payment processing</li>
+                            <li>Create clear donation tiers and rewards</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guide-section">
+                        <h3>2. Encouraging Donations</h3>
+                        <p>Motivate your community to support your server.</p>
+                        <ul>
+                            <li>Show appreciation for donors</li>
+                            <li>Offer exclusive donor perks</li>
+                            <li>Be transparent about fund usage</li>
+                            <li>Create regular donation campaigns</li>
+                        </ul>
+                    </div>
+                `,
+                category: 'monetization'
+            }
+        };
+
+        // Function to show guides by category
+        function showCategoryGuides(category) {
+            const allGuidesSection = document.querySelector('.all-guides');
+            const guidesList = document.querySelector('.guides-list');
+            
+            // Filter guides by category
+            const categoryGuides = Object.entries(guideContent)
+                .filter(([id, guide]) => guide.category === category)
+                .map(([id, guide]) => ({ id, ...guide }));
+            
+            // Clear current guides
+            guidesList.innerHTML = '';
+            
+            // Add category guides in order
+            categoryGuides.forEach((guide, index) => {
+                const guideItem = document.createElement('div');
+                guideItem.className = 'guide-item';
+                guideItem.onclick = () => openGuide(guide.id);
+                
+                guideItem.innerHTML = `
+                    <div class="guide-image">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="guide-content">
+                        <h3>${index + 1}. ${guide.title}</h3>
+                        <p>Click to read this comprehensive guide on ${guide.title.toLowerCase()}.</p>
+                        <div class="guide-meta">
+                            <span class="guide-category">${getCategoryName(category)}</span>
+                            <span><i class="fas fa-clock"></i> ${Math.floor(Math.random() * 20 + 5)} min</span>
+                            <span><i class="fas fa-eye"></i> ${Math.floor(Math.random() * 10 + 1)}k</span>
+                        </div>
+                    </div>
+                `;
+                
+                guidesList.appendChild(guideItem);
+            });
+            
+            // Scroll to guides section
+            allGuidesSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Show notification
+            showNotification(`Showing ${categoryGuides.length} guides for ${getCategoryName(category)}`, 'info');
+        }
+        
+        function getCategoryName(category) {
+            const names = {
+                'growth': 'Growth & Marketing',
+                'management': 'Server Management',
+                'moderation': 'Moderation & Safety',
+                'community': 'Community Building',
+                'bots': 'Bots & Automation',
+                'monetization': 'Monetization'
+            };
+            return names[category] || category;
+        }
+
+        function openGuide(guideId) {
+            const modal = document.getElementById('guideModal');
+            const titleElement = document.getElementById('guideTitle');
+            const contentElement = document.getElementById('guideContent');
+            
+            const guide = guideContent[guideId];
+            if (guide) {
+                titleElement.textContent = guide.title;
+                contentElement.innerHTML = guide.content;
+                modal.style.display = 'flex';
+            }
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guideModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('guideModal');
+            if (event.target === modal) {
+                closeGuideModal();
+            }
+        }
+    </script>
+
+    <style>
+        .page-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Featured Guides */
+        .featured-guides {
+            padding: 60px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .featured-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .featured-image {
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .featured-image i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary-color);
+            color: var(--bg-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .featured-content {
+            padding: 25px;
+        }
+
+        .featured-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .featured-content p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .featured-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Categories */
+        .guide-categories {
+            padding: 60px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .category-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .category-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .category-card p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .category-count {
+            background-color: var(--bg-tertiary);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* All Guides */
+        .all-guides {
+            padding: 60px 0;
+            background-color: var(--bg-secondary);
+        }
+
+        .guides-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .guide-item {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .guide-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .guide-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .guide-image i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .guide-content {
+            flex: 1;
+        }
+
+        .guide-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .guide-content p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .guide-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+        }
+
+        .guide-category {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .guide-meta span {
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Guide Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-header h2 {
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .guide-modal {
+            max-width: 800px;
+            max-height: 90vh;
+        }
+
+        .guide-section {
+            margin-bottom: 30px;
+        }
+
+        .guide-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .guide-section p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .guide-section ul,
+        .guide-section ol {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+
+        .guide-section li {
+            margin-bottom: 8px;
+        }
+
+        .guide-section strong {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .guide-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .guide-image {
+                margin: 0 auto;
+            }
+
+            .guide-meta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</body>
+</html>
