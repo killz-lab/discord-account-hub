@@ -1,3 +1,50 @@
+// Protection Layer - Disable common inspection methods
+(function() {
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable text selection
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable drag and drop
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+
+    // Disable keyboard shortcuts for developer tools
+    document.addEventListener('keydown', function(e) {
+        // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || (e.ctrlKey && e.keyCode === 85)) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Anti-debugger protection
+    setInterval(function() {
+        debugger;
+    }, 100);
+
+    // Console clearing protection
+    const originalConsole = {...console};
+    console.clear = function() {
+        console.log('Console cleared by protection');
+    };
+
+    // Basic obfuscation
+    var _0x4b2a = ['api', 'config', 'utils'];
+    var _0x5e5f = function(_0x4b2a, _0x5e5f) {
+        return _0x4b2a[_0x5e5f];
+    };
+})();
+
 // Discord Account Hub JavaScript
 
 // Mobile Navigation Toggle

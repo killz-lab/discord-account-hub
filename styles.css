@@ -17,6 +17,44 @@
     --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.48);
 }
 
+/* Protection Styles */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Disable text selection for all elements */
+p, h1, h2, h3, h4, h5, h6, span, div, a, button, input, textarea {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Disable print */
+@media print {
+    body {
+        display: none;
+    }
+}
+
+/* Hide scrollbar in webkit */
+::-webkit-scrollbar {
+    display: none;
+}
+
 * {
     margin: 0;
     padding: 0;
