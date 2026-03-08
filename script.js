@@ -572,7 +572,7 @@ function handleDiscordCallback() {
         localStorage.setItem('discordToken', 'mock_real_token_' + Date.now());
         
         // Update UI
-        updateLoginButton(mockUserData);
+        updateLoginUI(mockUserData);
         
         showNotification('Successfully logged in as ' + mockUserData.username + '#' + mockUserData.discriminator + '!', 'success');
         
@@ -588,6 +588,12 @@ if (window.location.pathname === '/discord-callback') {
 
 // Check login status on page load
 document.addEventListener('DOMContentLoaded', () => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    if (isLoggedIn) {
+        const userData = JSON.parse(localStorage.getItem('discordUser'));
+        updateLoginUI(userData);
+    }
+});
 
 // Close modals on Escape key
 document.addEventListener('keydown', (e) => {
