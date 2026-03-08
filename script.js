@@ -600,10 +600,240 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeDiscordLoginModal();
         closeGuideModal();
+        closeTemplatePreview();
     }
 });
 
-// Discord Account Generator Download
+// Discord Template Functions
+function useTemplate(templateName) {
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    
+    if (!isLoggedIn) {
+        showNotification('Please login to use templates', 'warning');
+        showDiscordLoginModal();
+        return;
+    }
+    
+    // Show loading state
+    showNotification('Loading template...', 'info');
+    
+    // Simulate template loading
+    setTimeout(() => {
+        // Store template in user data
+        const userData = JSON.parse(localStorage.getItem('discordUser'));
+        userData.activeTemplate = templateName;
+        localStorage.setItem('discordUser', JSON.stringify(userData));
+        
+        // Show success message
+        showNotification(`Template "${templateName}" applied successfully!`, 'success');
+        
+        // Redirect to dashboard
+        setTimeout(() => {
+            window.location.href = 'dashboard.html';
+        }, 1500);
+    }, 1000);
+}
+
+function previewTemplate(templateName) {
+    // Create preview modal
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.id = 'templatePreviewModal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Template Preview: ${templateName}</h2>
+                <button class="modal-close" onclick="closeTemplatePreview()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="template-preview">
+                    <div class="preview-header">
+                        <div class="preview-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>${templateName}</h3>
+                    </div>
+                    <div class="preview-content">
+                        <h4>Server Structure</h4>
+                        <div class="preview-structure">
+                            <div class="category-preview">
+                                <h5><i class="fas fa-home"></i> Main Categories</h5>
+                                <ul>
+                                    <li>#welcome - New member introductions</li>
+                                    <li>#announcements - Server updates</li>
+                                    <li>#rules - Server guidelines</li>
+                                    <li>#general - General discussion</li>
+                                </ul>
+                            </div>
+                            <div class="category-preview">
+                                <h5><i class="fas fa-users"></i> Member Channels</h5>
+                                <ul>
+                                    <li>#chat - Casual conversation</li>
+                                    <li>#memes - Share memes and fun</li>
+                                    <li>#media - Share images and videos</li>
+                                    <li>#voice-chat - Voice channel discussions</li>
+                                </ul>
+                            </div>
+                            <div class="category-preview">
+                                <h5><i class="fas fa-shield-alt"></i> Staff Areas</h5>
+                                <ul>
+                                    <li>#staff-chat - Staff discussions</li>
+                                    <li>#moderation - Moderation logs</li>
+                                    <li>#admin - Administrative tasks</li>
+                                    <li>#reports - User reports</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="preview-roles">
+                            <h4>Role Hierarchy</h4>
+                            <div class="role-list">
+                                <div class="role-item admin">
+                                    <span class="role-color"></span>
+                                    <span class="role-name">Server Owner</span>
+                                </div>
+                                <div class="role-item admin">
+                                    <span class="role-color"></span>
+                                    <span class="role-name">Administrator</span>
+                                </div>
+                                <div class="role-item moderator">
+                                    <span class="role-color"></span>
+                                    <span class="role-name">Moderator</span>
+                                </div>
+                                <div class="role-item vip">
+                                    <span class="role-color"></span>
+                                    <span class="role-name">VIP Member</span>
+                                </div>
+                                <div class="role-item member">
+                                    <span class="role-color"></span>
+                                    <span class="role-name">Member</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-actions">
+                    <button class="btn btn-primary" onclick="useTemplate('${templateName}')">
+                        <i class="fas fa-download"></i> Use This Template
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeTemplatePreview()">
+                        <i class="fas fa-times"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Show modal
+    modal.style.display = 'flex';
+    
+    // Close modal when clicking outside
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            closeTemplatePreview();
+        }
+    };
+}
+
+function closeTemplatePreview() {
+    const modal = document.getElementById('templatePreviewModal');
+    if (modal) {
+        modal.remove();
+    }
+}
+
+// Add template preview styles
+const templateStyles = `
+    .template-preview {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+    .preview-header {
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 20px;
+    }
+    .preview-header .preview-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+    .preview-structure {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .category-preview {
+        background: var(--bg-tertiary);
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .category-preview h5 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .category-preview ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .category-preview li {
+        padding: 5px 0;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+    .preview-roles {
+        background: var(--bg-tertiary);
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .role-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .role-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        background: var(--bg-secondary);
+        border-radius: 6px;
+    }
+    .role-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .role-item.admin .role-color { background: #ed4245; }
+    .role-item.moderator .role-color { background: #f47b67; }
+    .role-item.vip .role-color { background: #f1c40f; }
+    .role-item.member .role-color { background: #57f287; }
+    .preview-actions {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        padding: 20px;
+        border-top: 1px solid var(--border-color);
+    }
+`;
+
+// Add styles to page
+if (!document.getElementById('templatePreviewStyles')) {
+    const styleElement = document.createElement('style');
+    styleElement.id = 'templatePreviewStyles';
+    styleElement.textContent = templateStyles;
+    document.head.appendChild(styleElement);
+}
 function downloadDiscordGen() {
     // Try multiple download methods
     const exeFileName = 'gui.exe';
