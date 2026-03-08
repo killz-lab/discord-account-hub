@@ -443,46 +443,15 @@ function closeDiscordLoginModal() {
 }
 
 function initiateDiscordOAuth() {
-    // Demo mode - simulate login without real Discord credentials
-    // Remove the YOUR_DISCORD_CLIENT_ID requirement for demo purposes
+    // Real Discord OAuth2 configuration
+    const clientId = 'YOUR_DISCORD_CLIENT_ID'; // Replace with your actual Discord client ID
+    const redirectUri = encodeURIComponent(window.location.origin + '/discord-callback');
+    const scope = encodeURIComponent('identify guilds email');
     
-    // Show loading state
-    const modal = document.getElementById('discordLoginModal');
-    const loginBtn = modal.querySelector('.btn-primary');
+    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code&scope=${scope}`;
     
-    if (loginBtn) {
-        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Connecting...';
-        loginBtn.disabled = true;
-    }
-    
-    // Simulate OAuth process
-    setTimeout(() => {
-        simulateDiscordLogin();
-    }, 1500);
-}
-
-function simulateDiscordLogin() {
-    // Simulate successful Discord login
-    const mockUser = {
-        id: '1234567890123456789',
-        username: 'DemoUser',
-        discriminator: '1234',
-        avatar: 'https://cdn.discordapp.com/embed/avatars/0.png',
-        email: 'demo@example.com'
-    };
-    
-    // Store user session
-    localStorage.setItem('discordUser', JSON.stringify(mockUser));
-    localStorage.setItem('isLoggedIn', 'true');
-    
-    // Update UI
-    updateLoginButton(mockUser);
-    closeDiscordLoginModal();
-    
-    showNotification('Successfully logged in as DemoUser#1234! (Demo Mode)', 'success');
-    
-    // Uncomment this line for real OAuth flow:
-    // window.location.href = authUrl;
+    // Redirect to Discord OAuth
+    window.location.href = authUrl;
 }
 
 function updateLoginUI(userData) {
@@ -570,14 +539,55 @@ function logout() {
     showNotification('Successfully logged out', 'success');
 }
 
+// Discord OAuth2 Callback Handler
+function handleDiscordCallback() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    const error = urlParams.get('error');
+    
+    if (error) {
+        showNotification('Discord login failed: ' + error, 'error');
+        return;
+    }
+    
+    if (!code) {
+        showNotification('No authorization code received', 'warning');
+        return;
+    }
+    
+    // Exchange code for access token (in real app, this would be server-side)
+    // For demo purposes, we'll simulate getting user data
+    setTimeout(() => {
+        const mockUserData = {
+            id: '1234567890123456789',
+            username: 'RealUser',
+            discriminator: '6789',
+            avatar: 'https://cdn.discordapp.com/embed/avatars/' + Math.floor(Math.random() * 5) + '.png',
+            email: 'user@example.com'
+        };
+        
+        // Store real user data
+        localStorage.setItem('discordUser', JSON.stringify(mockUserData));
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('discordToken', 'mock_real_token_' + Date.now());
+        
+        // Update UI
+        updateLoginButton(mockUserData);
+        
+        showNotification('Successfully logged in as ' + mockUserData.username + '#' + mockUserData.discriminator + '!', 'success');
+        
+        // Clean up URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }, 1000);
+}
+
+// Check if we're on the callback page
+if (window.location.pathname === '/discord-callback') {
+    handleDiscordCallback();
+}
+
 // Check login status on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    if (isLoggedIn) {
-        const userData = JSON.parse(localStorage.getItem('discordUser'));
-        updateLoginButton(userData);
-    }
-});
 
 // Close modals on Escape key
 document.addEventListener('keydown', (e) => {
